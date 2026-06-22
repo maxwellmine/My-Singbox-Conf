@@ -79,6 +79,7 @@
       "outbounds": [],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
+      "idle_timeout": "15m",
       "tolerance": 10
     },
     {
@@ -88,6 +89,7 @@
       "outbounds": [],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
+      "idle_timeout": "15m",
       "tolerance": 10
     },
     {
@@ -97,6 +99,7 @@
       "outbounds": [],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
+      "idle_timeout": "15m",
       "tolerance": 10
     },
     {
@@ -106,6 +109,7 @@
       "outbounds": [],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
+      "idle_timeout": "15m",
       "tolerance": 10
     },
     {
@@ -115,6 +119,7 @@
       "outbounds": [],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
+      "idle_timeout": "15m",
       "tolerance": 10
     },
     {
@@ -124,6 +129,7 @@
       "outbounds": [],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
+      "idle_timeout": "15m",
       "tolerance": 10
     },
     {
