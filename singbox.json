@@ -68,6 +68,7 @@
         "🇸🇬 新加坡",
         "🇨🇳 台湾",
         "🇯🇵 日本",
+        "kr 韩国",
         "🇺🇸 美国"
       ]
     },
@@ -101,6 +102,15 @@
     {
       "type": "urltest",
       "tag": "🇯🇵 日本",
+      "interrupt_exist_connections": true,
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 10
+    },
+    {
+      "type": "urltest",
+      "tag": "kr 韩国",
       "interrupt_exist_connections": true,
       "outbounds": [],
       "url": "https://www.gstatic.com/generate_204",
