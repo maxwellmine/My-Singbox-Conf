@@ -1,7 +1,7 @@
 {
   "log": {
     "disabled": false,
-    "level": "debug",
+    "level": "info",
     "output": "sing-box.log",
     "timestamp": true
   },
@@ -13,9 +13,7 @@
       "external_ui_download_detour": "全球直连",
       "secret": "110",
       "default_mode": "rule",
-      "access_control_allow_origin": [
-        "*"
-      ],
+      "access_control_allow_origin": ["http://127.0.0.1:20123"],
       "access_control_allow_private_network": false
     },
     "cache_file": {
