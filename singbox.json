@@ -164,7 +164,7 @@
     }
   ],
   "route": {
-     "rule_sets": [
+     "rule_set": [
       {
         "tag": "rs-ai",
         "type": "remote",
