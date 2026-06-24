@@ -164,6 +164,64 @@
     }
   ],
   "route": {
+     "rule_sets": [
+      {
+        "tag": "rs-ai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-openai.srs",
+        "download_detour": "全球直连"
+      },
+      {
+        "tag": "rs-anthropic",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-anthropic.srs",
+        "download_detour": "全球直连"
+      },
+      {
+        "tag": "rs-gemini",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-google-gemini.srs",
+        "download_detour": "全球直连"
+      },
+      {
+        "tag": "rs-telegram-domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-telegram.srs",
+        "download_detour": "全球直连"
+      },
+      {
+        "tag": "rs-telegram-ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geoip@rule-set/geoip-telegram.srs",
+        "download_detour": "全球直连"
+      },
+      {
+        "tag": "rs-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-apple.srs",
+        "download_detour": "全球直连"
+      },
+      {
+        "tag": "rs-!cn-domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-geolocation-!cn.srs",
+        "download_detour": "全球直连"
+      },
+      {
+        "tag": "rs-!cn-ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geoip@rule-set/geoip-geolocation-!cn.srs",
+        "download_detour": "全球直连"
+      }
+    ],
     "rules": [
     {"action": "sniff", "inbound": "tun-in"},
     {"action": "hijack-dns", "protocol": "dns"},
@@ -171,10 +229,10 @@
     {"action": "route", "clash_mode": "direct", "outbound": "全球直连"},
     {"action": "route", "clash_mode": "global", "outbound": "GLOBAL"},
     {"action": "route", "ip_is_private": true, "outbound": "全球直连"},
-    {"action": "route", "geosite": ["openai", "anthropic", "google-gemini"], "outbound": "AI"},
-    {"action": "route", "geosite": "telegram", "geoip": "telegram", "outbound": "Telegram"},
-    {"action": "route", "geosite": "apple", "outbound": "全球直连"},
-    {"action": "route", "geosite": "geolocation-!cn", "geoip": "geolocation-!cn", "outbound": "国外分流"}
+    {"action": "route", "rule_set": ["rs-ai","rs-anthropic","rs-gemini"], "outbound": "AI"},
+    {"action": "route", "rule_set": ["rs-telegram-domain","rs-telegram-ip"], "outbound": "Telegram"},
+    {"action": "route", "rule_set": ["rs-apple"], "outbound": "全球直连"},
+    {"action": "route", "rule_set": ["rs-!cn-domain","rs-!cn-ip"], "outbound": "国外分流"}
   ],
     "auto_detect_interface": true,
     "final": "全球直连"
@@ -187,10 +245,10 @@
     {"tag": "Remote-DNS-Resolver", "address": "udp://8.8.8.8:53", "detour": "节点选择"}
   ],
   "rules": [
-    {"action": "route", "server": "Local-DNS", "outbound": "any"},
+    {"action": "route", "server": "Local-DNS"},
     {"action": "route", "clash_mode": "direct", "server": "Local-DNS"},
     {"action": "route", "clash_mode": "global", "server": "Remote-DNS"},
-    {"action": "route", "geosite": "geolocation-!cn", "server": "Remote-DNS"}
+    {"action": "route", "rule_set": ["rs-!cn-domain"], "server": "Remote-DNS"}
   ],
     "disable_cache": false,
     "disable_expire": false,
