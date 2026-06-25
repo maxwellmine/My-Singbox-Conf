@@ -261,7 +261,7 @@
       }
     ],
     "auto_detect_interface": true,
-    "final": "节点选择"
+    "final": "全球直连"
   },
   "dns": {
     "servers": [
