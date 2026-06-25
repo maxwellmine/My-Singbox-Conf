@@ -17,7 +17,6 @@
     ],
     "disable_cache": false,
     "disable_expire": false,
-    "independent_cache": false,
     "final": "Local-DNS-Resolver"
   },
   "inbounds": [
@@ -103,6 +102,6 @@
     "final": "最终分流"
   },
   "experimental": {
-    "cache_file": { "enabled": true, "store_fakeip": false, "rdrc_timeout": "7d" }
+    "cache_file": { "enabled": true, "store_fakeip": false, "store_dns": true }
   }
 }
