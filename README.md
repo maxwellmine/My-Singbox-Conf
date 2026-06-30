@@ -11,4 +11,7 @@ https://sbcv.app/
 
 
 
+ERROR[0163] [1715102028 4.76s] router: process DNS packet: unpack request: bad question name: dns: bad rdata
+ERROR[0163] [1715102028 4.76s] router: process DNS packet: unpack request: bad question name: dns: bad rdata
+
 
